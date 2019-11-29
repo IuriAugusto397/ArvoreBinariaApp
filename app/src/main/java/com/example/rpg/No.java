@@ -5,9 +5,11 @@
  */
 package com.example.rpg;
 
+import android.view.View;
+
 import java.util.Scanner;
 
-public class No {
+public class No  {
 
     int id; // valor nó, com esse valor podemos posicionar o nó na posição correta da árvore
     String conteudo; // texto a ser exibido
@@ -77,32 +79,36 @@ public class No {
     }
 
     public static boolean proximoNo() {
-        scan = new Scanner(System.in);
-        String option = scan.next();
-        switch (option.toUpperCase()) {
-            case "1":
-                return false;
-            case "2":
-                return true;
-            default:
-                System.out.println("OPÇÃO INVÁLIDA!");
-                return false;
+        if (MainActivity.ladoNo == true) {
+            return MainActivity.ladoNo;
+        } else if (MainActivity.ladoNo == false) {
+            return MainActivity.ladoNo;
         }
+        else return proximoNo();
     }
 
     //função para inicializar o programa
-    public static void Iniciaprograma(No node) {
+    public static void Iniciaprograma(final No node) {
         if (node.esquerda == null && node.direita == null) // teste se o nó é folha, sendo assim resposta final
         {
-            System.out.println(node.conteudo);
+            MainActivity.textoPrincipal.setText(node.conteudo);
 
-        } else {
-            System.out.println(node.conteudo);
-            if (proximoNo()) {
-                Iniciaprograma(node.direita);
-            } else {
-                Iniciaprograma(node.esquerda);
-            }
+        }
+        else {
+            MainActivity.textoPrincipal.setText(node.conteudo);
+
+            MainActivity.botaoDireita.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Iniciaprograma(node.direita);
+                }
+            });
+            MainActivity.botaoEsquerda.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Iniciaprograma(node.esquerda);
+                }
+            });
         }
     }
 
@@ -121,9 +127,12 @@ public class No {
         }
     }
 
-}
+
+
+    }
+
 
 /**
  *
- * @author alessandro.alves
+ * @author iuri augusto
  */

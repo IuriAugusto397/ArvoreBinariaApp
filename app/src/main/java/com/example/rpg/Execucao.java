@@ -7,7 +7,7 @@ package com.example.rpg;
 
 /**
  *
- * @author alessandro.alves
+ * @author iuri augusto
  */
 public class Execucao {
     
