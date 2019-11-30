@@ -5,11 +5,14 @@
  */
 package com.example.rpg;
 
+import android.content.Intent;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Scanner;
 
-public class No  {
+public class No {
 
     int id; // valor nó, com esse valor podemos posicionar o nó na posição correta da árvore
     String conteudo; // texto a ser exibido
@@ -78,20 +81,20 @@ public class No  {
         }
     }
 
-    public static boolean proximoNo() {
-        if (MainActivity.ladoNo == true) {
-            return MainActivity.ladoNo;
-        } else if (MainActivity.ladoNo == false) {
-            return MainActivity.ladoNo;
-        }
-        else return proximoNo();
-    }
+
 
     //função para inicializar o programa
     public static void Iniciaprograma(final No node) {
         if (node.esquerda == null && node.direita == null) // teste se o nó é folha, sendo assim resposta final
         {
-            MainActivity.textoPrincipal.setText(node.conteudo);
+            MainActivity.Folha = node.conteudo;
+           // MainActivity.textoPrincipal.setText(node.conteudo);
+            Intent intent = new Intent(MainActivity.getContexto(), TelaFerreiro.class);
+            Dados d = new Dados();
+            d.chamaTela();
+            //Dados.intent = intent;
+            //AppCompatActivity m = new AppCompatActivity();
+           // m.startActivity(intent);
 
         }
         else {

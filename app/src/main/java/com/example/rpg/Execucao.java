@@ -14,11 +14,11 @@ public class Execucao {
     public static void Dados() {
         
         //Pergunta Raiz
-        No.inserir(8, "(Você prefere: 1)Ataque Físico " + "ou (2) Ataque Mágico?");// SE 1 GO Nó 4 || Se 2 GO Nó 12
+        No.inserir(8, "(Você prefere) \n (1)Ataque Físico \n " + "(2) Ataque Mágico?");// SE 1 GO Nó 4 || Se 2 GO Nó 12
         
         //Segundo nível da árvore
         // Resposta Nó 8
-        No.inserir(4, "Você pefere luta (1) Corpo a Corpo ou " + "(2) à distância?");//- Para 1 GO Nó 2 || Se 2 GO Nó 6 
+        No.inserir(4, "(Você prefere) \n (1) luta  Corpo a Corpo \n " + "(2) combate à distância?");//- Para 1 GO Nó 2 || Se 2 GO Nó 6
         
         // Resposta Nó 4
         No.inserir(2, "(1) Ataque ou " + "(2) Defesa?");//Para 1 GO Nó 1 || Para 2 GO Nó 3
