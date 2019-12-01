@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public static Button botaoDireita;
     public static String Folha;
     private static Context contexto;
+    public static int aSSert;
 
 
     @Override
@@ -36,8 +37,35 @@ public class MainActivity extends AppCompatActivity {
     public void Iniciaprograma(final No node) {
         if (node.esquerda == null && node.direita == null) // teste se o nó é folha, sendo assim resposta final
         {
+            switch (node.id){
+                case 1:
+                    aSSert = node.id;
+                    break;
+                case 3:
+                    aSSert = node.id;
+                    break;
+                case 5:
+                    aSSert = node.id;
+                    break;
+                case 7:
+                    aSSert = node.id;
+                    break;
+                case 9:
+                    aSSert = node.id;
+                    break;
+                case 11:
+                    aSSert = node.id;
+                    break;
+                case 13:
+                    aSSert = node.id;
+                    break;
+                case 15:
+                    aSSert = node.id;
+                    break;
+            }
+
             MainActivity.Folha = node.conteudo;
-            Intent intent = new Intent(MainActivity.getContexto(), TelaFerreiro.class);
+            Intent intent = new Intent(MainActivity.getContexto(), TelaFinal.class);
             ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(getApplicationContext(), R.anim.fede_in, R.anim.mover_direita);
             ActivityCompat.startActivity(MainActivity.this, intent, activityOptionsCompat.toBundle());
 
