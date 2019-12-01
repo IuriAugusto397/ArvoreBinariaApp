@@ -5,10 +5,6 @@
  */
 package com.example.rpg;
 
-import android.content.Intent;
-import android.view.View;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Scanner;
 
@@ -53,7 +49,7 @@ public class No {
     //Essa função recebe um id e seu conteúdo e organiza sua posição na árvore
 
     public static void inserir(No node, int valor, String info) {
-        if (node == null) {	//inicializa a árvore preenchendo o ID do nó e seu conteúdo
+        if (node == null) {    //inicializa a árvore preenchendo o ID do nó e seu conteúdo
             raiz = new No(valor, info);
         } else {
             if (valor < node.id) {
@@ -82,60 +78,38 @@ public class No {
     }
 
 
+    //Passado para a classe MainActivity
 
     //função para inicializar o programa
-    public static void Iniciaprograma(final No node) {
-        if (node.esquerda == null && node.direita == null) // teste se o nó é folha, sendo assim resposta final
-        {
-            MainActivity.Folha = node.conteudo;
-           // MainActivity.textoPrincipal.setText(node.conteudo);
-            Intent intent = new Intent(MainActivity.getContexto(), TelaFerreiro.class);
-            Dados d = new Dados();
-            d.chamaTela();
-            //Dados.intent = intent;
-            //AppCompatActivity m = new AppCompatActivity();
-           // m.startActivity(intent);
-
-        }
-        else {
-            MainActivity.textoPrincipal.setText(node.conteudo);
-
-            MainActivity.botaoDireita.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Iniciaprograma(node.direita);
-                }
-            });
-            MainActivity.botaoEsquerda.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Iniciaprograma(node.esquerda);
-                }
-            });
-        }
-    }
-
-    public static No programa(No node, boolean esc) {
-        if (node.esquerda == null && node.direita == null) // teste se o nó é folha, sendo assim resposta final
-        {
-            return node;
-
-        } else {
-            System.out.println(node.conteudo);
-            if (esc) {
-                return (node.direita);
-            } else {
-                return (node.esquerda);
-            }
-        }
-    }
+//    public static void Iniciaprograma(final No node) {
+//        if (node.esquerda == null && node.direita == null) // teste se o nó é folha, sendo assim resposta final
+//        {
+//            MainActivity.Folha = node.conteudo;
+//            MainActivity.textoPrincipal.setText(node.conteudo);
+//
+//        }
+//        else {
+//            MainActivity.textoPrincipal.setText(node.conteudo);
+//
+//            MainActivity.botaoDireita.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Iniciaprograma(node.direita);
+//                }
+//            });
+//            MainActivity.botaoEsquerda.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Iniciaprograma(node.esquerda);
+//                }
+//            });
+//        }
+//    }
 
 
-
-    }
+}
 
 
 /**
- *
  * @author iuri augusto
  */
